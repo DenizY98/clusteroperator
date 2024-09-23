@@ -1,5 +1,9 @@
 # Build the manager binary
+<<<<<<< HEAD
 FROM golang:1.20 as builder
+=======
+FROM golang:1.22 AS builder
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 ARG TARGETOS
 ARG TARGETARCH
 

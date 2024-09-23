@@ -1,0 +1,23 @@
+# permissions for end users to view edgeclusters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: ba
+    app.kubernetes.io/managed-by: kustomize
+  name: edgecluster-viewer-role
+rules:
+- apiGroups:
+  - clustergroup.trumpf.com
+  resources:
+  - edgeclusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - clustergroup.trumpf.com
+  resources:
+  - edgeclusters/status
+  verbs:
+  - get

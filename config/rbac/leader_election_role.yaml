@@ -3,11 +3,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   labels:
+<<<<<<< HEAD
     app.kubernetes.io/name: role
     app.kubernetes.io/instance: leader-election-role
     app.kubernetes.io/component: rbac
     app.kubernetes.io/created-by: clusteroperator
     app.kubernetes.io/part-of: clusteroperator
+=======
+    app.kubernetes.io/name: ba
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
     app.kubernetes.io/managed-by: kustomize
   name: leader-election-role
 rules:

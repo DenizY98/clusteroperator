@@ -1,0 +1,11 @@
+apiVersion: clustergroup.trumpf.com/v1
+kind: EdgeCluster
+metadata:
+  name: edgecluster-example
+spec:
+  id: 1 
+  providerId: 123
+  kubeconf: "base64-encoded-kubeconf"
+  imagePullSecretNames: "my-secret"
+  registryPath: "my-registry"
+  daprAppId: "my-dapr-app-id"

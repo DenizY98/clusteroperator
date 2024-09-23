@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -8,14 +11,25 @@
 bin/*
 Dockerfile.cross
 
+<<<<<<< HEAD
 # Test binary, build with `go test -c`
+=======
+# Test binary, built with `go test -c`
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
+<<<<<<< HEAD
 # Kubernetes Generated files - skip generated files, except for vendored files
 
+=======
+# Go workspace file
+go.work
+
+# Kubernetes Generated files - skip generated files, except for vendored files
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 !vendor/**/zz_generated.*
 
 # editor and IDE paraphernalia

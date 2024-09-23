@@ -3,11 +3,15 @@ kind: Namespace
 metadata:
   labels:
     control-plane: controller-manager
+<<<<<<< HEAD
     app.kubernetes.io/name: namespace
     app.kubernetes.io/instance: system
     app.kubernetes.io/component: manager
     app.kubernetes.io/created-by: clusteroperator
     app.kubernetes.io/part-of: clusteroperator
+=======
+    app.kubernetes.io/name: ba
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
     app.kubernetes.io/managed-by: kustomize
   name: system
 ---
@@ -18,11 +22,15 @@ metadata:
   namespace: system
   labels:
     control-plane: controller-manager
+<<<<<<< HEAD
     app.kubernetes.io/name: deployment
     app.kubernetes.io/instance: controller-manager
     app.kubernetes.io/component: manager
     app.kubernetes.io/created-by: clusteroperator
     app.kubernetes.io/part-of: clusteroperator
+=======
+    app.kubernetes.io/name: ba
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
     app.kubernetes.io/managed-by: kustomize
 spec:
   selector:
@@ -69,14 +77,23 @@ spec:
       - command:
         - /manager
         args:
+<<<<<<< HEAD
         - --leader-elect
+=======
+          - --leader-elect
+          - --health-probe-bind-address=:8081
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
         image: controller:latest
         name: manager
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
             drop:
+<<<<<<< HEAD
               - "ALL"
+=======
+            - "ALL"
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
         livenessProbe:
           httpGet:
             path: /healthz

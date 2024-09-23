@@ -2,6 +2,7 @@
 # This file is used to track the info used to scaffold your project
 # and allow the plugins properly work.
 # More info: https://book.kubebuilder.io/reference/project-config.html
+<<<<<<< HEAD
 domain: example.com
 layout:
 - go.kubebuilder.io/v4
@@ -10,14 +11,29 @@ plugins:
   scorecard.sdk.operatorframework.io/v2: {}
 projectName: clusteroperator
 repo: github.com/DenizY98/clusteroperator.git
+=======
+domain: trumpf.com
+layout:
+- go.kubebuilder.io/v4
+projectName: ba
+repo: github.com/DenizY98/clusteroperator
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 resources:
 - api:
     crdVersion: v1
     namespaced: true
   controller: true
+<<<<<<< HEAD
   domain: example.com
   group: clusterop
   kind: Cluster
   path: github.com/DenizY98/clusteroperator.git/api/v1alpha1
   version: v1alpha1
+=======
+  domain: trumpf.com
+  group: clustergroup
+  kind: EdgeCluster
+  path: github.com/DenizY98/clusteroperator/api/v1
+  version: v1
+>>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 version: "3"
