@@ -12,6 +12,8 @@ spec:
     listKind: EdgeClusterList
     plural: edgeclusters
     singular: edgecluster
+    shortNames:
+    - ec
   scope: Namespaced
   versions:
   - name: v1
