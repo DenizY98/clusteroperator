@@ -14,8 +14,6 @@ spec:
     shortNames:
     - ec
     singular: edgecluster
-    shortNames:
-    - ec
   scope: Namespaced
   versions:
   - name: v1
