@@ -6,4 +6,20 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: edgeclustergroup-sample
 spec:
-  # TODO(user): Add fields here
+  daprAppId: "dapr-app-123"
+  clusters:
+    - id: 1
+      providerId: 111
+      kubeconf: "kubeconfig-1"
+      imagePullSecretNames: "pull-secret-1"
+      registryPath: "registry-path-1"
+    - id: 2
+      providerId: 123
+      kubeconf: "kubeconfig-2"
+      imagePullSecretNames: "pull-secret-2"
+      registryPath: "registry-path-2"
+    - id: 3
+      providerId: 234
+      kubeconf: "kubeconfig-3"
+      imagePullSecretNames: "pull-secret-3"
+      registryPath: "registry-path-3"

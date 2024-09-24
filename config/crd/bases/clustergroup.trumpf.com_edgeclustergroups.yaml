@@ -11,9 +11,9 @@ spec:
     kind: EdgeClusterGroup
     listKind: EdgeClusterGroupList
     plural: edgeclustergroups
-    singular: edgeclustergroup
     shortNames:
     - ecg
+    singular: edgeclustergroup
   scope: Namespaced
   versions:
   - name: v1

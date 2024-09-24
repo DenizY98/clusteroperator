@@ -35,6 +35,7 @@ type EdgeClusterSpec struct {
 	// Application ID for Dapr
 	DaprAppId string `json:"daprAppId,omitempty"`
 }
+
 // EdgeClusterGroupSpec defines the desired state of EdgeClusterGroup
 type EdgeClusterGroupSpec struct {
 	// DaprAppId is the identifier for the group of edge clusters
@@ -56,7 +57,9 @@ type EdgeClusterGroupStatus struct {
 	// LastUpdated represents the last time the status was updated
 	LastUpdated metav1.Time `json:"lastUpdated,omitempty"`
 }
+
 // +kubebuilder:object:root=true
+// +kubebuilder:resource:shortName=ecg
 // +kubebuilder:subresource:status
 
 // EdgeClusterGroup is the Schema for the edgeclustergroups API

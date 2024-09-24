@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
 package controller
 
 import (
@@ -48,7 +47,6 @@ type EdgeClusterGroupReconciler struct {
 // +kubebuilder:rbac:groups=clustergroup.trumpf.com,resources=edgeclustergroups,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=clustergroup.trumpf.com,resources=edgeclustergroups/status,verbs=get;update;patch
 // +kubebuilder:rbac:groups=clustergroup.trumpf.com,resources=edgeclustergroups/finalizers,verbs=update
-
 
 const edgeClusterGroupFinalizer = "edgeclustergroup.finalizer.clustergroupv1.trumpf.com"
 
