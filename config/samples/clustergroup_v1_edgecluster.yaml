@@ -5,5 +5,11 @@ metadata:
     app.kubernetes.io/name: ba
     app.kubernetes.io/managed-by: kustomize
   name: edgecluster-sample
+
 spec:
-  # TODO(user): Add fields here
+  daprAppId: "dapr-app-123"
+  id: 1
+  providerId: 123
+  kubeconf: "kubeconfig-1"
+  imagePullSecretNames: "pull-secret-1"
+  registryPath: "registry-path-1"
