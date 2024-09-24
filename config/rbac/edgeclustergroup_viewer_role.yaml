@@ -1,27 +1,23 @@
-# permissions for end users to edit edgeclusters.
+# permissions for end users to view edgeclustergroups.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
     app.kubernetes.io/name: ba
     app.kubernetes.io/managed-by: kustomize
-  name: edgecluster-editor-role
+  name: edgeclustergroup-viewer-role
 rules:
 - apiGroups:
   - clustergroup.trumpf.com
   resources:
-  - edgeclusters
+  - edgeclustergroups
   verbs:
-  - create
-  - delete
   - get
   - list
-  - patch
-  - update
   - watch
 - apiGroups:
   - clustergroup.trumpf.com
   resources:
-  - edgeclusters/status
+  - edgeclustergroups/status
   verbs:
   - get

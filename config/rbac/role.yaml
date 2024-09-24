@@ -5,15 +5,9 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-<<<<<<< HEAD
-  - clusterop.example.com
-  resources:
-  - clusters
-=======
   - clustergroup.trumpf.com
   resources:
-  - edgeclusters
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
+  - edgeclustergroups
   verbs:
   - create
   - delete
@@ -23,27 +17,15 @@ rules:
   - update
   - watch
 - apiGroups:
-<<<<<<< HEAD
-  - clusterop.example.com
-  resources:
-  - clusters/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - clusterop.example.com
-  resources:
-  - clusters/status
-=======
   - clustergroup.trumpf.com
   resources:
-  - edgeclusters/finalizers
+  - edgeclustergroups/finalizers
   verbs:
   - update
 - apiGroups:
   - clustergroup.trumpf.com
   resources:
-  - edgeclusters/status
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
+  - edgeclustergroups/status
   verbs:
   - get
   - patch

@@ -1,9 +1,4 @@
 ## Append samples of your project ##
 resources:
-<<<<<<< HEAD
-- clusterop_v1alpha1_cluster.yaml
-#+kubebuilder:scaffold:manifestskustomizesamples
-=======
-- clustergroup_v1_edgecluster.yaml
+- clustergroup_v1_edgeclustergroup.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)

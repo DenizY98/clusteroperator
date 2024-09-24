@@ -1,34 +1,16 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 # Prometheus Monitor Service (Metrics)
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
     control-plane: controller-manager
-<<<<<<< HEAD
-    app.kubernetes.io/name: servicemonitor
-    app.kubernetes.io/instance: controller-manager-metrics-monitor
-    app.kubernetes.io/component: metrics
-    app.kubernetes.io/created-by: clusteroperator
-    app.kubernetes.io/part-of: clusteroperator
-=======
     app.kubernetes.io/name: ba
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
     app.kubernetes.io/managed-by: kustomize
   name: controller-manager-metrics-monitor
   namespace: system
 spec:
   endpoints:
     - path: /metrics
-<<<<<<< HEAD
-      port: https
-      scheme: https
-      bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
-      tlsConfig:
-=======
       port: https # Ensure this is the name of the port that exposes HTTPS metrics
       scheme: https
       bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
@@ -42,7 +24,6 @@ spec:
         # caFile: /etc/metrics-certs/ca.crt
         # certFile: /etc/metrics-certs/tls.crt
         # keyFile: /etc/metrics-certs/tls.key
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
         insecureSkipVerify: true
   selector:
     matchLabels:

@@ -1,9 +1,9 @@
 apiVersion: clustergroup.trumpf.com/v1
-kind: EdgeCluster
+kind: EdgeClusterGroup
 metadata:
   labels:
     app.kubernetes.io/name: ba
     app.kubernetes.io/managed-by: kustomize
-  name: edgecluster-sample
+  name: edgeclustergroup-sample
 spec:
   # TODO(user): Add fields here

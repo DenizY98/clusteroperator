@@ -2,35 +2,17 @@
 # since it depends on service name and namespace that are out of this kustomize package.
 # It should be run by config/default
 resources:
-<<<<<<< HEAD
-- bases/clusterop.example.com_clusters.yaml
-#+kubebuilder:scaffold:crdkustomizeresource
-=======
-- bases/clustergroup.trumpf.com_edgeclusters.yaml
+- bases/clustergroup.trumpf.com_edgeclustergroups.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)
 
 patches:
 # [WEBHOOK] To enable webhook, uncomment all the sections with [WEBHOOK] prefix.
 # patches here are for enabling the conversion webhook for each CRD
-<<<<<<< HEAD
-#- path: patches/webhook_in_clusters.yaml
-#+kubebuilder:scaffold:crdkustomizewebhookpatch
-
-# [CERTMANAGER] To enable cert-manager, uncomment all the sections with [CERTMANAGER] prefix.
-# patches here are for enabling the CA injection for each CRD
-#- path: patches/cainjection_in_clusters.yaml
-#+kubebuilder:scaffold:crdkustomizecainjectionpatch
-
-# the following config is for teaching kustomize how to do kustomization for CRDs.
-configurations:
-- kustomizeconfig.yaml
-=======
 # +kubebuilder:scaffold:crdkustomizewebhookpatch
 
 # [CERTMANAGER] To enable cert-manager, uncomment all the sections with [CERTMANAGER] prefix.
 # patches here are for enabling the CA injection for each CRD
-#- path: patches/cainjection_in_edgeclusters.yaml
+#- path: patches/cainjection_in_edgeclustergroups.yaml
 # +kubebuilder:scaffold:crdkustomizecainjectionpatch
 
 # [WEBHOOK] To enable webhook, uncomment the following section
@@ -38,4 +20,3 @@ configurations:
 
 #configurations:
 #- kustomizeconfig.yaml
->>>>>>> 59ff505 (fix(iter1): added ctrl, crd and sample)

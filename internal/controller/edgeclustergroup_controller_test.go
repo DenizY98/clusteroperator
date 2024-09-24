@@ -30,7 +30,7 @@ import (
 	clustergroupv1 "github.com/DenizY98/clusteroperator/api/v1"
 )
 
-var _ = Describe("EdgeCluster Controller", func() {
+var _ = Describe("EdgeClusterGroup Controller", func() {
 	Context("When reconciling a resource", func() {
 		const resourceName = "test-resource"
 
@@ -40,13 +40,13 @@ var _ = Describe("EdgeCluster Controller", func() {
 			Name:      resourceName,
 			Namespace: "default", // TODO(user):Modify as needed
 		}
-		edgecluster := &clustergroupv1.EdgeCluster{}
+		edgeclustergroup := &clustergroupv1.EdgeClusterGroup{}
 
 		BeforeEach(func() {
-			By("creating the custom resource for the Kind EdgeCluster")
-			err := k8sClient.Get(ctx, typeNamespacedName, edgecluster)
+			By("creating the custom resource for the Kind EdgeClusterGroup")
+			err := k8sClient.Get(ctx, typeNamespacedName, edgeclustergroup)
 			if err != nil && errors.IsNotFound(err) {
-				resource := &clustergroupv1.EdgeCluster{
+				resource := &clustergroupv1.EdgeClusterGroup{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      resourceName,
 						Namespace: "default",
@@ -59,16 +59,16 @@ var _ = Describe("EdgeCluster Controller", func() {
 
 		AfterEach(func() {
 			// TODO(user): Cleanup logic after each test, like removing the resource instance.
-			resource := &clustergroupv1.EdgeCluster{}
+			resource := &clustergroupv1.EdgeClusterGroup{}
 			err := k8sClient.Get(ctx, typeNamespacedName, resource)
 			Expect(err).NotTo(HaveOccurred())
 
-			By("Cleanup the specific resource instance EdgeCluster")
+			By("Cleanup the specific resource instance EdgeClusterGroup")
 			Expect(k8sClient.Delete(ctx, resource)).To(Succeed())
 		})
 		It("should successfully reconcile the resource", func() {
 			By("Reconciling the created resource")
-			controllerReconciler := &EdgeClusterReconciler{
+			controllerReconciler := &EdgeClusterGroupReconciler{
 				Client: k8sClient,
 				Scheme: k8sClient.Scheme(),
 			}

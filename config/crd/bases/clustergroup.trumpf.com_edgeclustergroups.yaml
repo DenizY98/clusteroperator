@@ -1,0 +1,102 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.1
+  name: edgeclustergroups.clustergroup.trumpf.com
+spec:
+  group: clustergroup.trumpf.com
+  names:
+    kind: EdgeClusterGroup
+    listKind: EdgeClusterGroupList
+    plural: edgeclustergroups
+    singular: edgeclustergroup
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: EdgeClusterGroup is the Schema for the edgeclustergroups API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: EdgeClusterGroupSpec defines the desired state of EdgeClusterGroup
+            properties:
+              clusters:
+                description: Clusters is the list of EdgeClusters that are part of
+                  this group
+                items:
+                  description: EdgeClusterSpec defines the desired state of EdgeCluster
+                  properties:
+                    daprAppId:
+                      description: Application ID for Dapr
+                      type: string
+                    id:
+                      description: Unique identifier for the edge cluster
+                      type: integer
+                    imagePullSecretNames:
+                      description: Names of the image pull secrets
+                      type: string
+                    kubeconf:
+                      description: Kubeconfig file content for accessing the cluster
+                      type: string
+                    providerId:
+                      description: Identifier for the cloud provider
+                      type: integer
+                    registryPath:
+                      description: Path to the container registry
+                      type: string
+                  type: object
+                type: array
+              daprAppId:
+                description: DaprAppId is the identifier for the group of edge clusters
+                type: string
+            required:
+            - clusters
+            - daprAppId
+            type: object
+          status:
+            description: EdgeClusterGroupStatus defines the observed state of EdgeClusterGroup
+            properties:
+              groupStatus:
+                description: GroupStatus indicates the overall status of the EdgeClusterGroup
+                type: string
+              lastUpdated:
+                description: LastUpdated represents the last time the status was updated
+                format: date-time
+                type: string
+              readyClusters:
+                description: ReadyClusters indicates the number of EdgeClusters that
+                  are ready
+                type: integer
+              totalClusters:
+                description: TotalClusters indicates the total number of EdgeClusters
+                  in the group
+                type: integer
+              unreadyClusters:
+                description: UnreadyClusters indicates the number of EdgeClusters
+                  that are not ready
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
