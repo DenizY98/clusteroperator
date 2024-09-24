@@ -11,6 +11,8 @@ spec:
     kind: EdgeCluster
     listKind: EdgeClusterList
     plural: edgeclusters
+    shortNames:
+    - ec
     singular: edgecluster
     shortNames:
     - ec
