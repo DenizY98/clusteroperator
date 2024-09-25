@@ -112,7 +112,7 @@ func (r *EdgeClusterGroupReconciler) Reconcile(ctx context.Context, req ctrl.Req
 	}
 
 	// Schedule the next reconciliation after a certain interval
-	return ctrl.Result{RequeueAfter: 1 * time.Minute}, nil
+	return ctrl.Result{RequeueAfter: 1 * time.Minute / 6}, nil
 }
 
 // syncWithDatabase syncs the EdgeClusterGroup objects with the database
@@ -127,7 +127,7 @@ func (r *EdgeClusterGroupReconciler) syncWithDatabase(ctx context.Context) error
 	// so that it's possible for the operator to be run locally with `make run` without the need to build and deploy foreach change
 	// Uncomment the following line to fetch data from the db-mock service inside the running cluster
 	// dbMockURL := fmt.Sprintf("http://%s:%d/apps", dbMockService.Spec.ClusterIP, 3000)
-	dbMockURL := "http://localhost:3003/cluster"
+	dbMockURL := "http://localhost:3001/apps"
 	resp, err := http.Get(dbMockURL)
 	if err != nil {
 		return err
