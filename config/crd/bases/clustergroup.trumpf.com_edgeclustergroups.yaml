@@ -47,9 +47,6 @@ spec:
                 items:
                   description: EdgeClusterSpec defines the desired state of EdgeCluster
                   properties:
-                    daprAppId:
-                      description: Application ID for Dapr
-                      type: string
                     id:
                       description: Unique identifier for the edge cluster
                       type: integer

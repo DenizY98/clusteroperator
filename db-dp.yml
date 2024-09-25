@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sfh-db-mock-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sfh-db-mock
+  template:
+    metadata:
+      labels:
+        app: sfh-db-mock
+    spec:
+      containers:
+      - name: sfh-db-mock
+        image: wi21232/sfh-db-mock:latest
+        ports:
+        - containerPort: 3000

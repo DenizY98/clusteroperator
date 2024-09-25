@@ -127,7 +127,7 @@ func (r *EdgeClusterGroupReconciler) syncWithDatabase(ctx context.Context) error
 	// so that it's possible for the operator to be run locally with `make run` without the need to build and deploy foreach change
 	// Uncomment the following line to fetch data from the db-mock service inside the running cluster
 	// dbMockURL := fmt.Sprintf("http://%s:%d/apps", dbMockService.Spec.ClusterIP, 3000)
-	dbMockURL := "http://localhost:3000/apps"
+	dbMockURL := "http://localhost:3003/cluster"
 	resp, err := http.Get(dbMockURL)
 	if err != nil {
 		return err

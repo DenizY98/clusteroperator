@@ -32,8 +32,6 @@ type EdgeClusterSpec struct {
 	ImagePullSecretNames string `json:"imagePullSecretNames,omitempty"`
 	// Path to the container registry
 	RegistryPath string `json:"registryPath,omitempty"`
-	// Application ID for Dapr
-	DaprAppId string `json:"daprAppId,omitempty"`
 }
 
 // EdgeClusterGroupSpec defines the desired state of EdgeClusterGroup
